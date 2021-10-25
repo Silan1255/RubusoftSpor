@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AyarlarFragment">
+    tools:context=".SettingsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarSportLayout1"
@@ -24,44 +24,45 @@
             android:layout_marginStart="12dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="Ana sayfa"
+            android:text="Ayarlar"
             android:textColor="#1E3347"
             android:textSize="16dp" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="110dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:entries="@array/country_arrays"
         android:padding="8dp"
-        android:prompt="@string/country_prompt"
 
+        android:prompt="@string/country_prompt"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarSportLayout1" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_reload"
-        android:background="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@id/spinner1"
+        android:background="@color/white"
+        app:layout_constraintStart_toEndOf="@id/spinner1"
         app:layout_constraintTop_toBottomOf="@+id/appBarSportLayout1" />
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="110dp"
-        android:padding="8dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:entries="@array/country_arrays"
+        android:padding="8dp"
         android:prompt="@string/country_prompt"
-        app:layout_constraintLeft_toRightOf="@+id/btn_reload"
-        app:layout_constraintTop_toBottomOf="@+id/appBarSportLayout1"/>
+        app:layout_constraintStart_toEndOf="@+id/btn_reload"
+        app:layout_constraintTop_toBottomOf="@+id/appBarSportLayout1" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_connect"
-        android:background="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@id/spinner2"
-        app:layout_constraintTop_toBottomOf="@+id/appBarSportLayout1"/>
-</FrameLayout>
+        android:background="@color/white"
+        app:layout_constraintStart_toEndOf="@id/spinner2"
+        app:layout_constraintTop_toBottomOf="@+id/appBarSportLayout1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
